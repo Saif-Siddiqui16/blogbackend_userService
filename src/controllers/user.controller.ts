@@ -18,7 +18,9 @@ export const loginUser = TryCatch(async (req, res) => {
     return;
   }
 
-  const googleRes = await oauth2client.getToken(code);
+  return res.status(200).json({ code });
+
+  /* const googleRes = await oauth2client.getToken(code);
 
   oauth2client.setCredentials(googleRes.tokens);
 
@@ -46,7 +48,7 @@ export const loginUser = TryCatch(async (req, res) => {
     message: "Login success",
     token,
     user,
-  });
+  });*/
 });
 
 export const myProfile = TryCatch(async (req: AuthenticatedRequest, res) => {
