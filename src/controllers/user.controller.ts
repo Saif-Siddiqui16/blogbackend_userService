@@ -11,6 +11,11 @@ import { getBuffer } from "../utils/dataUri.js";
 export const loginUser = TryCatch(async (req, res) => {
   const { code } = req.body;
 
+  console.log(code);
+  return res.status(200).json({
+    message: "hello",
+  });
+  /*
   if (!code) {
     res.status(400).json({
       message: "Authorization code is required",
@@ -46,7 +51,7 @@ export const loginUser = TryCatch(async (req, res) => {
     message: "Login success",
     token,
     user,
-  });
+  });*/
 });
 
 export const myProfile = TryCatch(async (req: AuthenticatedRequest, res) => {
