@@ -17,10 +17,10 @@ export const loginUser = TryCatch(async (req, res) => {
     });
     return;
   }
+  const googleRes = await oauth2client.getToken(code);
+  return res.status(200).json(googleRes);
 
-  return res.status(200).json({ code });
-
-  /* const googleRes = await oauth2client.getToken(code);
+  /* 
 
   oauth2client.setCredentials(googleRes.tokens);
 
