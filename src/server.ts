@@ -24,7 +24,9 @@ app.use(
 );
 
 app.use("/api/v1", userRoute);
-
+app.get("/ping", (req, res) => {
+  res.send("pong");
+});
 app.listen(port, async () => {
   await connectDb();
   console.log(`server is running on : ${port}`);
