@@ -8,7 +8,7 @@ const parser_1 = __importDefault(require("datauri/parser"));
 const path_1 = __importDefault(require("path"));
 const getBuffer = (file) => {
     const parser = new parser_1.default();
-    const ext = path_1.default.extname(file.oridinalname);
+    const ext = path_1.default.extname(file.oridinalname).toString();
     const dataUri = parser.format(ext, file.buffer);
     return dataUri;
 };

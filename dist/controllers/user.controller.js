@@ -51,7 +51,7 @@ exports.loginUser = (0, TryCatch_js_1.default)((req, res) => __awaiter(void 0, v
 }));
 exports.myProfile = (0, TryCatch_js_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const user = req.user;
-    res.json(user);
+    return res.status(200).json(user);
 }));
 exports.getUserProfile = (0, TryCatch_js_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const user = yield user_model_js_1.default.findById(req.params.id);
